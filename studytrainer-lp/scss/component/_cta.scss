@@ -1,0 +1,122 @@
+@use '../globals' as *;
+
+// =============================
+//  CTA
+// =============================
+.component-cta__container {
+  background-image: url(../../img/CTA-background-image.png);
+  background-size: cover;
+  background-position: center right;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 35px;
+  @include mq(xl) {
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+  .sp-only {
+    @include mq(xl) {
+      display: flex !important;
+      align-items: center;
+      margin: 0 auto;
+      padding-bottom: 16px;
+    }
+  }
+}
+
+.component-cta__image {
+  width: 370px;
+  height: auto;
+  @include mq(xl) {
+    max-width: 292px;
+    margin: 0 auto;
+  }
+}
+.component-cta__lead {
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5rem;
+  font-weight: 700;
+  color: $cAccent;
+  text-shadow: 2px 2px 1px $cBase, -2px 2px 1px $cBase, 2px -2px 1px $cBase,
+    -2px -2px 1px $cBase, 2px 0px 1px $cBase, 0px 2px 1px $cBase,
+    -2px 0px 1px $cBase, 0px -2px 1px $cBase;
+
+  .cta-lead__emphasis {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 5rem;
+    @include mq(xl) {
+      font-size: 3.5rem;
+      letter-spacing: 0.1rem;
+    }
+    @include mq(ssm) {
+      font-size: 3rem;
+    }
+
+    &::before {
+      content: '・・・・・・';
+      position: absolute;
+      top: -0.7em;
+      left: 0;
+      font-size: 0.8em;
+      letter-spacing: 0.4em;
+      color: #009fe3;
+      @include mq(xl) {
+        letter-spacing: 0.8rem;
+      }
+    }
+  }
+  span {
+    letter-spacing: 0.05rem;
+    @include mq(xl) {
+      font-size: 2rem;
+    }
+    @include mq(ssm) {
+      font-size: 1.8rem;
+    }
+  }
+  .circle-label {
+    letter-spacing: 0.05rem;
+    font-size: 2rem;
+    color: $cBase;
+    text-shadow: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: $cAccent;
+    border-radius: 50%;
+    margin-right: 10px;
+    @include mq(xl) {
+      font-size: 1.6rem;
+      width: 48px;
+      height: 50px;
+      letter-spacing: 0;
+      margin-bottom: 5px;
+    }
+    @include mq(ssm) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.component-cta__text {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 25px 0 30px;
+  @include mq(xl) {
+    font-size: 1.6rem;
+    padding: 15px 0 15px;
+  }
+  @include mq(ssm) {
+    font-size: 1.4rem;
+  }
+}
+.component-cta__btn {
+  text-align: center;
+}

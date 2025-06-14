@@ -1,0 +1,76 @@
+@use '../globals' as *;
+
+// =============================
+//  無料体験CTAセクション
+// =============================
+
+.section-cta-trial {
+  margin-bottom: 70px;
+}
+.section-cta-trial__inner {
+  padding-bottom: 110px;
+}
+
+.section-cta-trial__heading {
+  text-align: center;
+  position: relative;
+  .underline {
+    &::after {
+      content: '';
+      position: absolute;
+      left: -0.9em;
+      bottom: -7px;
+      height: 50px;
+      width: 125%;
+      border-bottom: 2px solid $cMain;
+      z-index: -1;
+    }
+  }
+}
+
+.trial-flow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  @include mq(xl) {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 15px;
+  }
+  @include mq(sm) {
+    padding: 0;
+  }
+  .trial-flow__list {
+    width: 220px;
+    @include mq(xl) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    align-items: center;
+    .flow-list__img {
+      @include mq(xl) {
+        width: 220px;
+      }
+    }
+    .flow-list__lead {
+      font-size: 2rem;
+      color: $cAccent;
+      padding: 20px 0 15px;
+      letter-spacing: 0;
+      text-align: center;
+      @include mq(xl) {
+        font-size: 1.8rem;
+        padding: 10px 0 5px;
+      }
+    }
+    .flow-list__text {
+      font-size: 1.6rem;
+      line-height: 1.5;
+    }
+  }
+}

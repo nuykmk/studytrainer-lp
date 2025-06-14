@@ -1,0 +1,245 @@
+@use '../globals' as *;
+// =============================
+//  TUTOR
+// =============================
+.section-tutor {
+  background-color: transparentize($cSub, 0.85);
+  text-align: center;
+  margin: 160px 0;
+  position: relative;
+  @include mq(xl) {
+    margin: 50px 0;
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background-color: inherit;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    z-index: -1;
+    @include mq(xl) {
+      height: 50px;
+    }
+  }
+
+  &::before {
+    top: -160px;
+    transform: rotate(180deg);
+    @include mq(xl) {
+      top: -50px;
+    }
+  }
+
+  &::after {
+    bottom: -160px;
+    @include mq(xl) {
+      bottom: -50px;
+    }
+  }
+}
+
+.section-tutor__inner {
+  position: relative;
+  padding-top: 0;
+  @include mq(xl) {
+    padding-top: 30px;
+  }
+}
+
+.section-tutor__lead {
+  padding-top: 80px;
+  width: 700px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 111px;
+  @include mq(xl) {
+    max-width: 360px;
+    margin-bottom: 61px;
+  }
+}
+.section-tutor__lead-heading {
+  margin-bottom: 50px;
+  letter-spacing: 0.2rem;
+  @include mq(xl) {
+    margin-bottom: 30px;
+  }
+  .underline {
+    &::after {
+      @include mq(xl) {
+        border-bottom: 7px solid $cAccentOrange;
+        width: 100%;
+        left: -0.1;
+      }
+    }
+  }
+}
+
+.section-tutor__lead-text {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  padding-bottom: 20px;
+  letter-spacing: 0;
+  @include mq(xl) {
+    padding-bottom: 10px;
+  }
+  @include mq(xl) {
+    text-align: left;
+  }
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+  strong {
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+  .lead-text-strong {
+    font-size: 2rem;
+  }
+}
+
+.tutor-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 80px;
+  @include mq(xl) {
+    gap: 55px;
+    margin-bottom: 30px;
+  }
+}
+
+.tutor-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 430px;
+  border: 2px solid #2da6df;
+  border-radius: 10px;
+  padding: 15px;
+  background: #fff;
+  @include mq(xl) {
+    max-width: 320px;
+    margin-left: auto;
+    &:nth-child(even) {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+  @include mq(ssm) {
+    max-width: 315px;
+  }
+
+  &__img {
+    flex-shrink: 0;
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    top: -94px;
+    left: -64px;
+    @include mq(xl) {
+      width: 130px;
+      height: 130px;
+      left: -55px;
+      right: auto;
+      top: -40px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &:nth-child(even) {
+    .tutor-card__img {
+      @include mq(xl) {
+        right: -55px;
+        left: auto;
+      }
+    }
+  }
+
+  .tutor-card__name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $cAccent;
+    position: relative;
+    text-align: center;
+    width: 260px;
+    margin: 0 19px 45px 130px;
+    @include mq(xl) {
+      font-size: 1.8rem;
+      width: 234px;
+      margin-left: 57px;
+      margin-right: 0;
+    }
+    @include mq(ssm) {
+      max-width: 215px;
+    }
+    span {
+      @include mq(ssm) {
+        font-size: 1.6rem;
+      }
+    }
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 12px;
+      background-image: url('../../img/Tutor-upperline.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 12px;
+      background-image: url('../../img/Tutor-downline.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &:nth-child(even) {
+    .tutor-card__name {
+      @include mq(xl) {
+        margin-left: 0;
+        margin-right: 57px;
+      }
+    }
+  }
+
+  &__comment {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding-left: 33px;
+    padding-right: 17px;
+    list-style: disc;
+    text-align: left;
+    @include mq(xl) {
+      letter-spacing: 0;
+      padding: 0 0 0 19px;
+    }
+  }
+}
+
+.section-tutor-footer {
+  font-size: 2rem;
+  margin-bottom: 60px;
+  @include mq(xl) {
+    font-size: 1.8rem;
+    letter-spacing: 0;
+    margin-bottom: 40px;
+  }
+}

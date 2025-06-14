@@ -1,0 +1,83 @@
+@use '../globals' as *;
+// =============================
+//  FAQ
+// =============================
+
+.section-faq {
+  background-color: #fff;
+  .section-faq__inner {
+    padding-bottom: 85px;
+  }
+  .faq-list {
+    max-width: 800px;
+    margin: 65px auto 90px;
+    @include mq(xl) {
+      margin: 30px auto 0;
+      max-width: 360px;
+    }
+    &__item {
+      border-bottom: 1px solid $cSub;
+      padding-top: 20px;
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      dt {
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+        font-weight: 400;
+        background-color: $cAccent;
+        color: $cBase;
+        border-radius: 30px;
+        padding: 16px 28px 15px;
+        @include mq(xl) {
+          padding: 15px;
+        }
+      }
+
+      dd {
+        display: flex;
+        align-items: flex-start;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        color: $cMain;
+        padding: 18px 28px 20px;
+        @include mq(xl) {
+          padding: 15px;
+        }
+      }
+    }
+  }
+  .faq-list__item a {
+    display: inline;
+    color: inherit;
+    text-decoration: underline;
+    word-break: break-word;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .faq-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: $cBase;
+    color: $cAccent;
+    font-size: 1.6rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+  .faq-icon-answer {
+    color: $cBase;
+    background-color: $cAccent;
+  }
+}

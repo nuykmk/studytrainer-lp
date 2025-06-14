@@ -1,0 +1,133 @@
+@use '../globals' as *;
+// =============================
+//  VOICE
+// =============================
+
+.section-voice__inner {
+  padding-top: 150px;
+  padding-bottom: 60px;
+  @include mq(xl) {
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
+}
+
+.section-voice__desc {
+  text-align: center;
+  margin: 80px 0 50px;
+  @include mq(xl) {
+    font-size: 1.8rem;
+    margin: 30px 0;
+  }
+}
+.section-voice__cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  @include mq(xl) {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  .voice-card {
+    background-color: transparentize($cSub, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.6rem;
+    max-width: 300px;
+    @include mq(xl) {
+      max-width: 360px;
+    }
+    &__lead {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 34px;
+      @include mq(xl) {
+        padding-bottom: 15px;
+      }
+      .user-img-1 {
+        width: 80px;
+        height: auto;
+      }
+      .user-img-2 {
+        width: 81px;
+        height: 94px;
+      }
+      .user-img-3 {
+        width: 110px;
+        height: 95px;
+        @include mq(xl) {
+          width: 86px;
+        }
+      }
+      .voice-card__heading-text {
+        font-weight: 700;
+        padding-bottom: 10px;
+      }
+    }
+
+    &__text {
+      letter-spacing: 0;
+      line-height: 1.5;
+    }
+  }
+}
+
+.section-voice__bottom {
+  color: $cBase;
+  background-image: url(../../img/blackboard.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 310px;
+  font-family: $fontGreeting;
+  @include mq(xl) {
+    margin-bottom: 133px;
+  }
+
+  .section-voice__bottom-inner {
+    padding: 40px 0 60px;
+  }
+  .section-voice__note {
+    text-align: center;
+    padding-bottom: 44px;
+    letter-spacing: 0.4rem;
+    @include mq(xl) {
+      padding-bottom: 30px;
+      line-height: 1.5;
+    }
+    .underline {
+      display: inline-block;
+      z-index: 100;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: -0.4em;
+        bottom: -4px;
+        height: 50px;
+        width: 102%;
+        border-bottom: 5px solid #f7ff59;
+        z-index: -1;
+      }
+    }
+  }
+
+  .result-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    @include mq(xl) {
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      padding-bottom: 60px;
+    }
+    .result-card {
+      @include mq(xl) {
+        max-width: 300px;
+      }
+    }
+  }
+}

@@ -1,0 +1,289 @@
+@use '../globals' as *;
+
+// =============================
+//  Features
+// =============================
+
+.section-features {
+  .section__title {
+    .section__title-ja {
+      @include mq(xl) {
+        bottom: -48px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+.section-features__container {
+  margin: 80px 0 50px;
+}
+.feature-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  margin-bottom: 50px;
+  @include mq(xl) {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &__img {
+    flex: 1;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__text {
+    flex: 1;
+    font-size: 1.6rem;
+    color: #333;
+    .feature-block__title-area {
+      color: $cAccent;
+
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 30px;
+      @include mq(xl) {
+        margin-bottom: 15px;
+      }
+      .num {
+        font-size: 5rem;
+        line-height: 0.5;
+        font-weight: 700;
+        @include mq(xl) {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+  &__label {
+    font-size: 1.1rem;
+    padding-left: 4px;
+    padding-bottom: 5px;
+    letter-spacing: 0.1em;
+    color: $cAccent;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    @include mq(xl) {
+      font-size: 1rem;
+      padding-left: 0;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    color: $cAccent;
+    margin-bottom: 10px;
+    padding-left: 27px;
+  }
+
+  &__desc {
+    font-size: 2rem;
+    line-height: 1.5;
+    @include mq(xl) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    @include mq(xl) {
+      flex-direction: column;
+    }
+  }
+}
+.feature-block:nth-of-type(4) {
+  .feature-block__title {
+    margin-bottom: 0;
+  }
+}
+
+.section-features__points-group {
+  background-color: transparentize($cSub, 0.85);
+  text-align: center;
+  margin: 160px 0;
+  position: relative;
+  @include mq(xl) {
+    margin: 50px 0;
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background-color: inherit;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    z-index: -1;
+    @include mq(xl) {
+      height: 50px;
+    }
+  }
+
+  &::before {
+    top: -160px;
+    transform: rotate(180deg);
+    @include mq(xl) {
+      top: -50px;
+    }
+  }
+
+  &::after {
+    bottom: -160px;
+    @include mq(xl) {
+      bottom: -50px;
+    }
+  }
+  .features-points__speech {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 30px;
+    @include mq(xl) {
+      gap: 1px;
+      width: 370px;
+      top: -14px;
+    }
+    .student-message {
+      width: 450px;
+      height: 70px;
+      margin-bottom: 36px;
+      @include mq(xl) {
+        width: 280px;
+        height: 37px;
+        margin-bottom: 52px;
+      }
+    }
+    .student {
+      width: 159px;
+      @include mq(xl) {
+        width: 80px;
+      }
+    }
+  }
+  .features-points__title {
+    margin-top: 117px;
+    @include mq(xl) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .features-points__lead {
+    margin-bottom: 44px;
+    @include mq(xl) {
+      font-size: 1.8rem;
+    }
+    @include mq(sm) {
+      letter-spacing: 0;
+    }
+  }
+  .features-points__heading-em {
+    font-size: 4rem;
+    font-weight: 500;
+    color: #40a8f0;
+    position: relative;
+    line-height: 1;
+    text-shadow: 2px 2px 1px $cBase, -2px 2px 1px $cBase, 2px -2px 1px $cBase,
+      -2px -2px 1px $cBase, 2px 0px 1px $cBase, 0px 2px 1px $cBase,
+      -2px 0px 1px $cBase, 0px -2px 1px $cBase;
+    @include mq(xl) {
+      font-size: 2.5rem;
+      margin-top: 10px;
+    }
+  }
+  .underline {
+    &::after {
+      width: 102%;
+      left: -0.7rem;
+      bottom: -4px;
+    }
+  }
+
+  .points__cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+    @include mq(xl) {
+      flex-direction: column;
+      margin-top: 0;
+      gap: 30px;
+    }
+    .points-cards__item {
+      .points-cards__label {
+        font-size: 1.1rem;
+        padding-left: 4px;
+
+        letter-spacing: 0.1em;
+        color: $cAccent;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        .num {
+          font-size: 4rem;
+          font-weight: 700;
+          line-height: 0.8;
+        }
+      }
+    }
+  }
+}
+.point-card {
+  background: #fff;
+  border: 3px solid #40a8f0;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+  padding: 2rem;
+  box-shadow: 2px 5px 5px transparentize($cMain, 0.5);
+  text-align: left;
+  @include mq(xl) {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 20px 0;
+    letter-spacing: -0.05rem;
+    @include mq(xl) {
+      font-size: 1.8rem;
+      padding: 10px 0;
+    }
+  }
+  &__text {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    @include mq(xl) {
+      line-height: 1.5;
+    }
+  }
+}
+
+.section-features__point-footer {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  line-height: 1.8;
+  @include mq(xl) {
+    font-size: 1.8rem;
+    margin: 30px 0 40px;
+  }
+}

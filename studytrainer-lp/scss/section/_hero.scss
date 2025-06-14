@@ -1,0 +1,331 @@
+@use '../globals' as *;
+
+// =============================
+//  HERO
+// =============================
+.section-hero {
+  background-image: url(../../img/PCFV-image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right top;
+  @include mq(xl) {
+    background-image: url(../../img/SPFV-image.png);
+    background-position: center top;
+    background-size: contain;
+  }
+  @include mq(sm) {
+    background-size: cover;
+  }
+}
+.section-hero {
+  overflow: hidden;
+  position: relative;
+}
+
+.section-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding: 30px 42.4% 18px 3%;
+  @include mq(xl) {
+    padding: 170px 0 270px;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+.section-hero__sub-copy {
+  width: 550px;
+  margin: 0 auto;
+  @include mq(xl) {
+    width: 100%;
+  }
+}
+.section-hero__headline {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 6rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  text-shadow: 2px 2px 1px $cBase, -2px 2px 1px $cBase, 2px -2px 1px $cBase,
+    -2px -2px 1px $cBase, 2px 0px 1px $cBase, 0px 2px 1px $cBase,
+    -2px 0px 1px $cBase, 0px -2px 1px $cBase;
+  @include mq(xl) {
+    font-size: 35px;
+    margin: 0 auto;
+  }
+}
+.section-hero__row {
+  display: block;
+
+  &--left {
+    text-align: left;
+    padding-bottom: 20px;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}
+
+.section-hero__text--strong {
+  font-family: $fontPrimary;
+  font-size: 9rem;
+  font-weight: 700;
+  color: $cAccentOrange;
+  padding-bottom: 5px;
+  position: relative;
+  display: inline-block;
+  z-index: 100;
+  @include mq(xl) {
+    font-size: 45px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: -0.4em;
+    right: -0.3em;
+    bottom: -2.1rem;
+    height: 50px;
+    width: 120%;
+    background: url(../../img/FV-underline.png) no-repeat center bottom;
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: -1;
+    @include mq(xl) {
+      width: 116%;
+      height: 25px;
+    }
+  }
+}
+.section-hero__text--accent {
+  font-size: 9rem;
+  font-weight: 700;
+  color: $cAccent;
+  padding-bottom: 2.3rem;
+  position: relative;
+  display: inline-block;
+  z-index: 100;
+  @include mq(xl) {
+    font-size: 45px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: -0.4em;
+    right: -0.3em;
+    bottom: 0.4rem;
+    height: 25px;
+    width: 110%;
+    background: url(../../img/FV-underline.png) no-repeat center bottom;
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: -1;
+    @include mq(xl) {
+      height: 15px;
+      bottom: 1rem;
+    }
+  }
+}
+
+.section-hero__support {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 2rem;
+  @include mq(xl) {
+    gap: 2rem;
+  }
+}
+
+.section-hero__brace {
+  width: 30px;
+  height: 93px;
+  @include mq(xl) {
+    width: 16px;
+    height: 49px;
+  }
+}
+
+.section-hero__support-text {
+  text-align: center;
+
+  .section-hero__support-caption {
+    font-size: 2.5rem;
+    @include mq(xl) {
+      font-size: 1.6rem;
+    }
+  }
+
+  .section-hero__support-main {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #00a3e0;
+    text-shadow: 2px 2px 1px $cBase, -2px 2px 1px $cBase, 2px -2px 1px $cBase,
+      -2px -2px 1px $cBase, 2px 0px 1px $cBase, 0px 2px 1px $cBase,
+      -2px 0px 1px $cBase, 0px -2px 1px $cBase;
+    @include mq(xl) {
+      font-size: 30px;
+    }
+  }
+}
+.small {
+  font-size: 4rem;
+  @include mq(xl) {
+    font-size: 18px;
+  }
+}
+
+.section-hero__features {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  @include mq(sm) {
+    gap: 1rem;
+  }
+}
+
+.section-hero__feature {
+  background: #00a3e0;
+  color: #fff;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 4px 6px 4px #1975aa;
+  @include mq(xl) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.section-hero__feature-caption {
+  font-size: 2.5rem;
+  padding-bottom: 10px;
+  @include mq(xl) {
+    font-size: 1.6rem;
+    padding-bottom: 2px;
+  }
+}
+.section-hero__feature-caption-sm {
+  padding-bottom: 2px;
+  font-size: 14px;
+  line-height: 1.1;
+}
+.section-hero__feature-title {
+  margin-top: 0.3rem;
+  @include mq(xl) {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+  .yen {
+    @include mq(xl) {
+      margin-top: 10px;
+      display: inline-block;
+    }
+  }
+  .zero {
+    font-size: 6rem;
+    line-height: 0;
+    @include mq(xl) {
+      font-size: 35px;
+      letter-spacing: 0;
+    }
+  }
+}
+.section-hero__feature-title-sm {
+  font-size: 3.5rem;
+  @include mq(xl) {
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+}
+.section-hero__content {
+  text-align: center;
+  padding-top: 17px;
+}
+.btn-cta {
+  width: 380px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $cAccentOrange;
+  color: $cBase;
+  padding: 9px 30px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.6rem;
+  @include mq(xl) {
+    width: 280px;
+    padding: 7px 20px;
+  }
+  &:hover {
+    background-color: $cBase;
+    color: $cAccentOrange;
+    border: 1px solid $cAccentOrange;
+    .icon-bg {
+      fill: $cAccentOrange;
+    }
+
+    .icon-arrow {
+      fill: $cBase;
+    }
+
+    .slash {
+      stroke: $cAccentOrange;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    @include mq(xl) {
+      font-size: 16px;
+    }
+    .slash {
+      width: 12px;
+      height: 12px;
+      stroke: #fff;
+    }
+  }
+
+  &__text {
+    font-size: 3rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    @include mq(xl) {
+      font-size: 22px;
+    }
+  }
+
+  &__icon {
+    margin-left: 16px;
+    margin-top: 3px;
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+    .icon-bg {
+      fill: $cBase;
+    }
+
+    .icon-arrow {
+      fill: $cAccentOrange;
+    }
+  }
+}

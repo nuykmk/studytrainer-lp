@@ -1,0 +1,220 @@
+@use '../globals' as *;
+// =============================
+//  question
+// =============================
+
+.section-question__top {
+  background-color: transparentize($cSub, 0.85);
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 80px solid transparentize($cSub, 0.85);
+    @include mq(xl) {
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-top: 40px solid transparentize($cSub, 0.85);
+      bottom: -40px;
+    }
+  }
+  .section__title-ja {
+    @include mq(ssm) {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.section-question__top-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  @include mq(xl) {
+    flex-direction: column;
+  }
+
+  .section-question__box {
+    display: flex;
+    align-items: flex-end;
+    @include mq(xl) {
+      position: relative;
+      align-items: flex-start;
+    }
+
+    .section-question__box-text {
+      width: 320px;
+      margin-top: 70px;
+      padding: 19px;
+      background-color: $cAccent;
+      border-radius: 10px;
+      color: $cBase;
+      display: flex;
+      flex-direction: column;
+      .section-question__box-heading {
+        text-align: center;
+        margin-bottom: 19px;
+      }
+    }
+  }
+  .section-question__box-image {
+    width: 170px;
+    height: 227px;
+    @include mq(xl) {
+      width: 100px;
+      height: 133px;
+    }
+  }
+  .section-question__box-parent {
+    .section-question__box-text {
+      order: 2;
+      @include mq(xl) {
+        margin-left: 55px;
+        margin-top: 70px;
+      }
+    }
+    .section-question__box-image {
+      order: 1;
+      @include mq(xl) {
+        position: absolute;
+        top: 23px;
+        left: 14px;
+      }
+    }
+  }
+
+  .section-question__box-student {
+    .section-question__box-text {
+      @include mq(xl) {
+        margin-top: 53px;
+      }
+    }
+    .section-question__box-image {
+      @include mq(xl) {
+        position: absolute;
+        top: -3px;
+        right: -36px;
+      }
+    }
+  }
+
+  .section-question__list {
+    padding: 0;
+    margin: 0;
+    font-size: 1.6rem;
+
+    li {
+      position: relative;
+      padding-left: 26px;
+      padding-bottom: 15px;
+      letter-spacing: 0;
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0.3em;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        background: url(../../img/Question-check.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+}
+.underline {
+  position: relative;
+  display: inline-block;
+  z-index: 100;
+  &::after {
+    content: '';
+    position: absolute;
+    left: -0.2em;
+    bottom: 0;
+    height: 50px;
+    width: 110%;
+    border-bottom: 10px solid $cAccentOrange;
+    z-index: -1;
+    @include mq(xl) {
+      border-bottom: 7px solid $cAccentOrange;
+    }
+  }
+}
+.section-question__bottom {
+  margin-top: 80px;
+  @include mq(xl) {
+    margin-top: 40px;
+  }
+
+  .section-question__lead {
+    text-align: center;
+    .section-question__lead-text {
+      @include mq(xl) {
+        padding-top: 10px;
+        line-height: 1.3;
+      }
+    }
+  }
+  .question-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-top: 50px;
+    @include mq(xl) {
+      gap: 1rem;
+      margin-top: 30px;
+    }
+
+    &__item {
+      flex: 1;
+      background-color: transparentize($cSub, 0.7);
+      border-radius: 10px;
+      text-align: center;
+      padding: 30px 50px;
+      @include mq(xl) {
+        padding: 15px;
+      }
+      &:nth-child(2) {
+        img {
+          width: 64%;
+          @include mq(xl) {
+            width: 66%;
+          }
+        }
+      }
+    }
+
+    &__img {
+      width: 90%;
+      height: auto;
+      margin-bottom: 1.2rem;
+      @include mq(xl) {
+        width: 94%;
+      }
+    }
+
+    &__text {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-top: 31px;
+      @include mq(xl) {
+        font-size: 1.2rem;
+        margin-top: 10px;
+      }
+    }
+  }
+  .question-cards__note {
+    text-align: center;
+    margin-top: 50px;
+    @include mq(xl) {
+      line-height: 1.7;
+    }
+  }
+}
